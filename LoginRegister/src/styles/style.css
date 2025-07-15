@@ -1,0 +1,255 @@
+/* Fonte */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Formatação geral da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background: linear-gradient(to right, white, black);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+/* Contêiner geral do formulário */
+.form-container {
+    display: flex;
+    width: 450px;
+    height: 600px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    background-color: #ebe7e7;
+    overflow: hidden;
+}
+
+/* Coluna individual dentro do formulário */
+.form-col {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Contêiner para os botões Entrar e Cadastrar */
+.btn-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+/* Estilo geral para os botões Entrar e Cadastrar */
+.btn {
+    font-weight: 500;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* Estilo específico para o botão Entrar */
+.btn-1 {
+    background: #6D9886;
+}
+
+/* Efeito hover nos botões */
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Estilo para as caixas de formulário (login, cadastro) */
+.form-box {
+    position: absolute;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+    transition: .3s;
+}
+
+/* Título dos formulários (Ex: "ENTRAR") */
+.form-title {
+    margin: 40px 0;
+    color: black;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Posição inicial do formulário de login */
+.login-form {
+    left: 50%;
+}
+
+/* Posição inicial do formulário de cadastro */
+.register-form {
+    left: -50%;
+}
+
+/* Ajustes de margem para o título do formulário de cadastro */
+.register-form .form-title {
+    margin-block: 40px 20px;
+}
+
+/* Div que agrupa todos os inputs do formulário */
+.form-inputs {
+    width: 100%;
+}
+
+/* Contêiner para cada input individual com seu ícone */
+.input-box {
+    position: relative;
+}
+
+/* Estilo geral para os campos de input */
+.inputs {
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo específico para o campo de texto (onde o usuário digita) */
+.input-field {
+    font-size: 16px;
+    padding: 0 40px 0 20px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    backdrop-filter: blur(20px);
+}
+
+/* Estilo do texto placeholder (legenda) nos inputs */
+::placeholder {
+    color: black;
+    font-size: 15px;
+}
+
+/* Estilo para os ícones dentro das caixas de input */
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: black;
+    width: 17px;
+    height: 17px;
+}
+
+/* Estilo para as seções "Esqueceu a senha?" e "Manter-me conectado" */
+.forgot-pass,
+.remember-me {
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+}
+
+/* Estilo do link "Esqueceu a senha?" */
+.forgot-pass a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Efeito hover no link "Esqueceu a senha?" */
+.forgot-pass a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do texto "Manter-me conectado" */
+.remember-me {
+    color: black;
+    font-size: 14px;
+}
+
+/* Estilo do botão de submit principal */
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #6D9886;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* Efeito hover no botão de submit principal */
+.submit-btn:hover {
+    gap: 15px;
+}
+
+/* Seção de formulário multi-passo */
+/* Contêiner dos botões de navegação do multi-passo */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo dos botões de navegação do multi-passo */
+.buttons button {
+    width: 100px;
+    padding: 5px 10px;
+    margin: 15px;
+}
+
+/* Estilo dos botões desabilitados no formulário multi-passo */
+.buttons button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Esconde os passos do formulário por padrão */
+.step {
+    display: none;
+}
+
+/* Mostra o passo ativo do formulário */
+.step.active {
+    display: block;
+}
+
+/* Estilo para o campo de input do código (verificação) */
+#code {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Remove as setinhas padrão dos inputs de tipo número */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Estilo da mensagem de feedback ao usuário */
+.message {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 0 30px;
+    color: #131313;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 80%;
+}

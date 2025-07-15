@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberBytes - Quem somos?</title>
+    <link rel="stylesheet" href="/AboutUs/src/styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="/Home/img/Logo.png">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a href="/Home/index.html">
+                <img class="logo" src="/Home/img/Logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <form action="" id="search-container">
+                    <input type="search">
+                    <button type="button" id="btn-search" onclick="">
+                        <img src="/Home/img/Search.png" alt="" width="15px" height="15px">
+                    </button>
+                    <div id="search-results">
+                    </div>
+                </form>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="chatbot-toggle"><img src="/Home/img/ChatBot.png"></a>
+                    </li>
+
+                    <!-- Entrar/Cadastrar -->
+                    <li class="nav-item" id="login-register">
+                        <a class="nav-link" href="/LoginRegister/index.html">Entrar/Cadastrar</a>
+                    </li>
+
+                    <!-- Usuário Logado -->
+                    <li class="nav-item" id="user-logged">
+                        <img src="/Home/img/User.png" alt="Usuário" class="user-icon" onclick="toggleUserMenu()">
+
+                        <!-- Desktop -->
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="/UserProfile/index.html">
+                                <i class="bi bi-person-circle"></i>Perfil
+                            </a>
+                            <a href="#" id="logout-button">
+                                <i class="bi bi-box-arrow-right"></i>Sair
+                            </a>
+                        </div>
+
+                        <!-- Mobile -->
+                        <div class="user-links-mobile" id="user-links-mobile">
+                            <a href="/UserProfile/index.html">Perfil</a>
+                            <a href="#" id="logout-button">Sair</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--ChatBot-->
+    <div class="modal fade" id="chatbotModal" tabindex="-1" aria-labelledby="chatbotModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="chatbotModalLabel">CyberBytes Assistant</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="chat-history">
+                    <div class="chat-message ai-message">
+                        <p>Olá! Como posso ajudar você a navegar com mais segurança hoje?</p>
+                    </div>
+                </div>
+                <div class="modal-footer" id="chat-input-container">
+                    <input type="text" class="form-control" id="chat-input" placeholder="Digite sua mensagem...">
+                    <button class="btn btn-primary" type="button" id="send-button">
+                        <i class="bi bi-send-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Seção explicando o projeto -->
+    <section class="about-section">
+        <div class="container">
+            <h2>O que é o CyberBytes?</h2>
+            <p>Nossa missão é aumentar a segurança digital da população e reduzir o número de ataques cibernéticos por
+                meio da plataforma Cyberbytes, uma iniciativa educativa que combina conhecimento técnico e orientações
+                práticas para empoderar usuários e empresas. Com foco na realidade brasileira, onde 356 bilhões de
+                tentativas de ataques foram registradas em 2024, a Cyberbytes atua como um hub de informações claras e
+                acessíveis, abordando desde leis como a LGPD até os golpes mais comuns do dia a dia, como phishing e
+                ransomware.</p>
+
+            <ul class="objectives">
+                <li>Explicar leis e direitos digitais (LGPD, Marco Civil da Internet)</li>
+                <li>Ensinar a identificar e bloquear ameaças (vírus, phishing, golpes via PIX)</li>
+                <li>Orientar respostas a incidentes e boas práticas (backups, senhas fortes, 2FA)</li>
+                <li>Alertar sobre riscos emergentes como deepfakes</li>
+            </ul>
+
+            <h2>Integrantes</h2>
+            <p>O CyberBytes foi desenvolvido por uma equipe multidisciplinar de estudantes de tecnologia comprometidos
+                com a segurança digital. Combinamos habilidades técnicas e visão social para criar soluções acessíveis
+                contra ameaças cibernéticas.</p>
+            <ul class="integrantes-list">
+                <li><a href="https://www.linkedin.com/in/danielumberto/" target="_blank">Daniel Umberto</a></li>
+                <li><a href="https://linkedin.com/in/" target="_blank">Josué Hitalo</a></li>
+                <li><a href="https://www.linkedin.com/in/khaled-ahmedrmv/" target="_blank">Khaled Ahmed</a></li>
+                <li><a href="https://www.linkedin.com/in/kauan-davi-oliveira-de-s%C3%A1-4539ba242/" target="_blank">Kauan Davi</a></li>
+                <li><a href="https://www.linkedin.com/in/lucas-henrique-gon%C3%A7alves-souto-a0764b30b/" target="_blank">Lucas Henrique</a></li>
+                <li><a href="https://www.linkedin.com/in/samuel-c-braga-2196a62a6/" target="_blank">Samuel Costa Braga</a></li>
+                <li><a href="https://www.linkedin.com/in/vin%C3%ADcius-rios/" target="_blank">Vinícius de Araújo</a></li>
+                <li><a href="https://www.linkedin.com/in/vinicius-bispo-86b8792a3/" target="_blank">Vinícius Bispo</a></li>
+            </ul>
+
+            <h2>Créditos</h2>
+            <p>Este projeto foi desenvolvido pela equipe CyberBytes, com orientação do professor Weverson Garcia
+                Medeiros. Agradecemos à comunidade acadêmica da UNICEPLAC pelo apoio e colaboração.</p>
+
+            <h2>Tecnologias utilizadas</h2>
+            <p>O projeto CyberBytes foi desenvolvido com tecnologias modernas tanto no front-end quanto no back-end,
+                garantindo uma aplicação segura, responsiva e eficiente. A seguir, estão as principais ferramentas e
+                linguagens utilizadas:</p>
+
+            <h3>Front-end</h3>
+            <ul class="tech-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Bootstrap 5</li>
+                <li>Font Awesome</li>
+            </ul>
+
+            <h3>Back-end</h3>
+            <ul class="tech-list">
+                <li>Java SE 17</li>
+                <li>Spring Framework</li>
+                <li>Spring Web</li>
+                <li>Spring Data JPA</li>
+                <li>Spring Security</li>
+                <li>Lombok</li>
+                <li>PostgreSQL Driver</li>
+                <li>Dev Tools</li>
+            </ul>
+
+            <h3>Ferramentas e Serviços</h3>
+            <ul class="tech-list">
+                <li>IntelliJ IDEA Community Edition</li>
+                <li>Visual Studio Code</li>
+                <li>Netlify</li>
+                <li>Render</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href="https://github.com/Lhgs-pog/Frontend-CyberBytes"><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="/Home/index.html">Início</a></li>
+                    <li><a href="/Home/index.html">Conteúdo</a></li>
+                    <li><a href="/AboutUs/index.html">Quem somos?</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy;2025;<span class="designer">CyberBytes</span></p>
+        </div>
+    </footer>
+
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/Home/auth/Authentication.js"></script>
+    <script src="/Home/ai/chatbot.js"></script>
+    <script src="/AboutUs/src/javascript/script.js"></script>
+</body>
+
+</html>

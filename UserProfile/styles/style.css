@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variáveis CSS */
+:root {
+    --primary-color: #6D9886;
+    --primary-color-dark: #212121;
+    --secondary-color: #f9fafe;
+    --text-color: #333333;
+    --white: #ffffff;
+}
+
+/* Body geral */
+body {
+    background: linear-gradient(to right, white, black);
+    margin-top: 20px;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Botões */
+.btn {
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 0.375rem;
+}
+
+/* Botões padrão */
+.btn-default,
+.btn-secondary {
+    background-color: var(--primary-color-dark);
+    color: var(--white);
+    border: 1px solid var(--primary-color-dark);
+}
+
+/* Botões padrão(HOVER) */
+.btn-default:hover,
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Botão com destaque */
+.btn-outline-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 1px solid var(--primary-color);
+}
+
+/* Botão com destaque(HOVER) */
+.btn-outline-primary:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+    color: var(--white);
+}
+
+/* Estilo da lista de navegação lateral */
+.account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border: none;
+    color: var(--text-color);
+    background-color: transparent;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Estilo da lista de navegação lateral(HOVER) */
+.account-settings-links .list-group-item:hover {
+    background-color: rgba(109, 152, 134, 0.1); /* tom claro do --primary-color */
+    color: var(--primary-color-dark);
+}
+
+/* Sidebar links ativos (como 'Geral' e 'Mudar Senha') */
+.list-group-item.active {
+    background-color: rgba(109, 152, 134, 0.2) !important;
+    color: var(--primary-color-dark) !important;
+    border-left: 4px solid var(--primary-color);
+    font-weight: 600;
+}
+
+/* Input oculto de imagem */
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* Texto auxiliar */
+.text-light {
+    color: #7a7a7a !important;
+    font-size: 0.875rem;
+}
+
+/* Cartões */
+.card {
+    background-color: var(--white);
+    background-clip: padding-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+/* Container com Borda */
+.row-bordered {
+    overflow: hidden;
+}
+
+/* Inputs */
+input.form-control {
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Inputs(FOCUS) */
+input.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(109, 152, 134, 0.25);
+}

@@ -1,0 +1,726 @@
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Variáveis CSS para cores e dimensões globais */
+:root {
+  --primary-color: #6D9886;
+  --primary-color-dark: #212121;
+  --secondary-color: #f9fafe;
+  --text-color: #333333;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+/* Esconde a barra de rolagem horizontal */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Reset de estilos para todos os elementos */
+* {
+  font-family: 'Poppins' sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+  background-color: #F6F6F6;
+}
+
+/* Estilo do logo do site na navegação */
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+/* Cor de fundo personalizada da barra de navegação */
+.navbar-custom {
+  background-color: #F6F6F6;
+}
+
+/* Estilo visual dos links da barra de navegação */
+.navbar-nav .nav-link {
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Efeito hover nos links da barra de navegação */
+.navbar-nav .nav-link:hover {
+  background-color: #ddd;
+}
+
+/* Estilo visual das imagens (ícones) na barra de navegação */
+.navbar-nav img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+/* Efeito de escala ao passar o mouse sobre as imagens da barra de navegação */
+.navbar-nav img:hover {
+  transform: scale(1.3);
+}
+
+/* Contêiner da barra de pesquisa */
+#search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo inicial (oculto) da barra de input de pesquisa */
+#search-container input[type="search"] {
+  display: none;
+  width: 220px;
+  padding: 8px 12px;
+  border: 2px solid #6D9886;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da barra de pesquisa quando está ativa/visível */
+#search-container.active input[type="search"] {
+  display: inline-block;
+}
+
+/* Estilo do botão de acionar a pesquisa */
+#btn-search {
+  background-color: #6D9886;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-left: 8px;
+}
+
+/* Estilo do ícone dentro do botão de pesquisa */
+#btn-search img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1);
+}
+
+/* Efeito hover no botão de pesquisa */
+#btn-search:hover {
+  background-color: #4E7363;
+  transform: scale(1.1);
+}
+
+
+/* Resultados da Pesquisa  */
+/* Estilo geral para o contêiner dos resultados da pesquisa. */
+#search-results {
+    position: absolute;
+    top: calc(100% + 8px); 
+    left: 0;
+    width: 100%; 
+    max-height: 280px;
+    overflow-y: auto; 
+    background-color: var(--white); 
+    border: 1px solid var(--secondary-color); 
+    border-radius: 10px; 
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    z-index: 1000; 
+    display: none; 
+    padding: 8px 0; 
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para exibir os resultados com animação. */
+#search-results[style*="display: block"] {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* Estilo para cada item individual de resultado */
+/* Estilo para cada link de resultado de pesquisa. */
+.search-result-item {
+    display: block; 
+    padding: 12px 18px; 
+    text-decoration: none; 
+    color: var(--text-color); 
+    font-size: 1rem; 
+    font-weight: 400;
+    transition: background-color 0.2s ease, color 0.2s ease; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    cursor: pointer;
+}
+
+/* Efeito hover e focus para os itens de resultado. */
+.search-result-item:hover,
+.search-result-item:focus {
+    background-color: var(--secondary-color); 
+    color: var(--primary-color);
+    outline: none; 
+}
+
+/*  Rolagem da barra de pesquisa */
+/* Estilo para a barra de rolagem dos resultados. */
+#search-results::-webkit-scrollbar {
+    width: 8px; 
+}
+
+/* Estilo para a trilha da barra de rolagem. */
+#search-results::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/* Estilo para o "polegar" (thumb) da barra de rolagem. */
+#search-results::-webkit-scrollbar-thumb {
+    background: #a8a8a8; 
+    border-radius: 10px; 
+    border: 2px solid var(--secondary-color); 
+}
+
+/* Efeito hover no "polegar" da barra de rolagem. */
+#search-results::-webkit-scrollbar-thumb:hover {
+    background: #888; 
+}
+
+/* Oculta a seção de usuário logado por padrão */
+#user-logged {
+    display: none;
+}
+
+/* Estilo do ícone do usuário (avatar) */
+.user-icon {
+  margin-top: 0.7rem;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+/* Efeito hover no ícone do usuário */
+.user-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do dropdown do usuário (menu suspenso) para desktop */
+.user-dropdown {
+  position: absolute;
+  top: 70px; 
+  right: 5px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  z-index: 100;
+  min-width: 180px;
+  border: 1px solid #eee;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* Estilo do dropdown do usuário quando está ativo (visível) */
+.user-dropdown.is-active {
+  visibility: visible; 
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo dos links dentro do dropdown do usuário */
+.user-dropdown a {
+  display: flex; 
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+/* Efeito hover nos links do dropdown do usuário */
+.user-dropdown a:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+/* Estilo dos links de usuário para a versão mobile (oculto por padrão) */
+.user-links-mobile {
+  display: none;
+  gap: 10px;
+  font-size: 0.95rem;
+  margin-left: 8px;
+}
+
+/* Estilo dos links de navegação mobile para usuário */
+.user-links-mobile a {
+  text-decoration: none;
+  color: var(--primary-color-dark);
+  font-weight: 600;
+}
+
+/* Efeito hover nos links de navegação mobile para usuário */
+.user-links-mobile a:hover {
+  text-decoration: underline;
+}
+
+/* Media query para telas com largura máxima de 900px (ajustes de navegação) */
+@media (max-width: 900px) {
+  /* Ajusta a margem do ícone de usuário para telas menores */
+  .user-icon {
+    margin-top: 0.1rem;
+    margin-left: 0.8rem;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+
+  /* Oculta o dropdown de usuário em telas menores */
+  .user-dropdown {
+    display: none !important;
+  }
+
+  /* Exibe e ajusta os links de usuário para mobile */
+  .user-links-mobile {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Estilo do modal do ChatBot */
+#chatbotModal .modal-content {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
+  overflow: hidden; 
+}
+
+/* Estilo do cabeçalho do modal do ChatBot */
+#chatbotModal .modal-header {
+  background-color: var(--primary-color-dark); 
+  color: var(--white);
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+}
+
+/* Estilo do botão de fechar do modal do ChatBot */
+#chatbotModal .modal-header .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%); 
+}
+
+/* Estilo do corpo do chat (área de histórico de mensagens) */
+#chat-history {
+  height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: var(--secondary-color); 
+}
+
+/* Estilo geral das bolhas de mensagem no chat */
+.chat-message {
+  padding: 12px 18px;
+  border-radius: 20px;
+  max-width: 85%;
+  word-wrap: break-word;
+  line-height: 1.5;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Remove a margem padrão dos parágrafos dentro das mensagens do chat */
+.chat-message p {
+  margin: 0;
+}
+
+/* Estilo das mensagens da IA (alinhadas à esquerda) */
+.ai-message {
+  background-color: var(--white); 
+  color: var(--text-color);
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Estilo das mensagens do usuário (alinhadas à direita) */
+.user-message {
+  background-color: var(--primary-color);
+  color: var(--white);
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+/* Estilo do rodapé do modal do chat (contém input e botão de enviar) */
+#chat-input-container {
+  display: flex;
+  gap: 10px;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #dee2e6;
+  background-color: var(--white);
+}
+
+/* Estilo do campo de input para digitar mensagens no chat */
+#chat-input-container .form-control {
+  border-radius: 20px;
+  border-color: #ced4da;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito focus no campo de input do chat */
+#chat-input-container .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(109, 152, 134, 0.25);
+}
+
+/* Estilo do botão de enviar mensagem no chat */
+#chat-input-container .btn {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Efeito hover no botão de enviar mensagem do chat */
+#chat-input-container .btn:hover {
+  opacity: 0.9;
+}
+
+/* Animação de fade-in para elementos */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para o indicador de "digitando..." no chat */
+.typing-indicator {
+  align-self: flex-start;
+  font-style: italic;
+  color: #888;
+  padding-left: 15px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Estilização da barra de rolagem (scrollbar) do histórico do chat (Webkit) */
+#chat-history::-webkit-scrollbar {
+  width: 8px;
+}
+#chat-history::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+#chat-history::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+#chat-history::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Seção de Conteúdo Principal */
+/* Configuração geral da seção de conteúdo */
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  min-height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+}
+
+/* Organização do contêiner de conteúdo (texto e botões) */
+.content__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Estilo do título principal na seção de conteúdo */
+.content__container h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 3.5rem;
+  color: var(--primary-color-dark);
+  margin-bottom: 1rem;
+}
+
+/* Estilo para o primeiro cabeçalho em destaque */
+.heading__1 {
+  font-weight: 700;
+}
+
+/* Estilo para o segundo cabeçalho em destaque (com cor primária) */
+.heading__2 {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Estilo dos parágrafos de apresentação do site */
+.content__container p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+/* Organização do contêiner de imagens na página */
+.image__container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  place-content: center;
+}
+
+/* Ajuste e estilo geral das imagens dentro do contêiner */
+.image__container img {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* Efeito de translação para a primeira imagem */
+.image__container img:nth-child(1) {
+  transform: translateY(70px);
+}
+
+/* Efeito de translação para a segunda imagem */
+.image__container img:nth-child(2) {
+  transform: translateY(-70px);
+}
+
+/* Estilo do conteúdo sobreposto nas imagens */
+.image__content {
+  position: absolute;
+  width: 100%;
+  max-width: 310px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%, 50%);
+  background: linear-gradient(to right,
+      var(--primary-color),
+      var(--primary-color-dark));
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+/* Estilo dos itens de lista dentro do conteúdo da imagem */
+.image__content li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+/* Media query para telas com largura menor que 900px (ajustes da seção de conteúdo) */
+@media (width < 900px) {
+  /* Altera o layout para uma única coluna em telas menores */
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Centraliza o texto do contêiner de conteúdo */
+  .content__container {
+    text-align: center;
+  }
+
+  /* Centraliza o formulário dentro do contêiner de conteúdo */
+  .content__container form {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* Ajusta a área da grade para o contêiner de imagem em telas menores */
+  .image__container {
+    grid-area: 1/1/2/2;
+  }
+
+  /* Redefine a translação das imagens para 0 em telas menores */
+  .image__container img {
+    transform: translateY(0) !important;
+  }
+}
+
+/* Estilo geral para os cartões de conteúdo */
+/* Configuração da grade para os cartões */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Estilo individual de cada cartão */
+.card {
+  min-height: 13rem;
+  background-color: #FFFFFF; /* Fundo branco para contraste */
+  border: 1px solid #6D9886; /* Borda com a cor verde */
+  border-radius: 8px; /* Cantos arredondados */
+  padding: 1rem;
+  transition: all 0.3s ease; /* Transição suave para hover */
+}
+
+/* Estilo dos links dentro dos cartões */
+.card a {
+  text-decoration: none;
+  color: #212121; /* Cor do texto escuro */
+  font-size: 1.2rem;
+}
+
+/* Efeito hover nos cartões */
+.card:hover {
+  border: 2px solid #6D9886; /* Borda mais destacada no hover */
+  box-shadow: 0 4px 8px rgba(33, 33, 33, 0.1); /* Sombra sutil */
+  transform: translateY(-5px); /* Efeito de levantar */
+}
+
+/* Estilo da row (linha) que agrupa os cartões */
+#grupo-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #F6F6F6; /* Fundo claro */
+  padding: 2rem;
+}
+
+/* Estilo geral do rodapé */
+footer{
+  background-color: #111;
+}
+
+/* Contêiner principal do rodapé */
+.footerContainer{
+  width: 100%;
+  padding: 70px 30px 20px ;
+}
+
+/* Contêiner dos ícones sociais no rodapé */
+.socialIcons{
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilo dos links individuais dos ícones sociais */
+.socialIcons a{
+  text-decoration: none;
+  padding:  10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+/* Estilo dos ícones sociais (Font Awesome, etc.) */
+.socialIcons a i{
+  font-size: 2em;
+  color: black;
+  opacity: 0,9;
+}
+
+/* Efeito hover nos links dos ícones sociais */
+.socialIcons a:hover{
+  background-color: #111;
+  transition: 0.5s;
+}
+
+/* Efeito hover na cor dos ícones sociais */
+.socialIcons a:hover i{
+  color: white;
+  transition: 0.5s;
+}
+
+/* Navegação interna do rodapé */
+.footerNav{
+  margin: 30px 0;
+}
+
+/* Lista de navegação do rodapé */
+.footerNav ul{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+/* Estilo dos links de navegação do rodapé */
+.footerNav ul li a{
+  color:white;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.3em;
+  opacity: 0.7;
+  transition: 0.5s;
+
+}
+
+/* Efeito hover nos links de navegação do rodapé */
+.footerNav ul li a:hover{
+  opacity: 1;
+}
+
+/* Seção inferior do rodapé (copyright) */
+.footerBottom{
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo do texto na seção inferior do rodapé */
+.footerBottom p{
+  color: white;
+}
+
+/* Estilo para o nome do designer/empresa no rodapé */
+.designer{
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0px 5px;
+}
+
+/* Media query para telas com largura máxima de 700px (ajustes do rodapé) */
+@media (max-width: 700px){
+  /* Centra todos os elementos dentro do footerContainer */
+  .footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Altera a direção da navegação do rodapé para coluna */
+  .footerNav ul{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Ajusta a largura e centraliza os itens da navegação do rodapé */
+  .footerNav ul li{
+    width:100%;
+    /* text-align: center; REMOVIDO: O align-items no pai já centraliza */
+    margin: 10px;
+  }
+
+  /* Ajusta o padding e margem dos ícones sociais */
+  .socialIcons a{
+    padding: 8px;
+    margin: 4px;
+  }
+}

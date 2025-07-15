@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrar - Cadastrar</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/LoginRegister/src/styles/style.css" />
+    <link rel="icon" type="image/png" href="/Home/img/Logo.png">
+</head>
+
+<body>
+    <!-- Formulário de Entrar -->
+    <div class="form-container">
+        <div class="form-col">
+            <div class="btn-box">
+                <button class="btn btn-1" id="login">Entrar</button>
+                <button class="btn btn-2" id="register">Cadastrar</button>
+            </div>
+
+            <!-- Login Form -->
+            <form action="" class="form-box login-form">
+                <div class="form-title">
+                    <span>Entrar</span>
+                </div>
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="email" class="inputs input-field" id="emailLogin" placeholder="E-mail" required />
+                        <ion-icon name="mail-outline" class="icon"></ion-icon>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" oninput="changeIcon(this.value)" id="logPassword"
+                            class="inputs input-field" placeholder="Senha" required />
+                        <ion-icon name="lock-closed-outline" class="icon" id="log-pass-icon"
+                            onclick="myLogPassword()"></ion-icon>
+                    </div>
+                    <div class="forgot-pass">
+                        <a href="/ForgotPassword/index.html">Esqueceu a senha?</a>
+                    </div>
+                    <div class="input-box">
+                        <button type="button" class="inputs submit-btn" onclick="login()">
+                            <span>Entrar</span>
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Essa Div é para futuras atualizações de Integração com Google, Linkedin, Github... -->
+                <!--<div class="social-login">
+                    <div class="social-login-box">
+                        <ion-icon name="logo-google" class="social-login-icon"></ion-icon>
+                    </div>
+                </div>
+                -->
+            </form>
+
+            <!-- Formulário de Cadastrar -->
+            <form action="" class="form-box register-form">
+                <div class="form-title">
+                    <span>Cadastrar</span>
+                </div>
+
+                <!--Passo 1 do formulário de cadastrar-->
+                <div class="step active" id="step1">
+                    <div class="form-inputs">
+                        <div class="input-box">
+                            <input type="username" id="username" class="inputs input-field"
+                                placeholder="Nome de usuário" required />
+                            <ion-icon name="person-outline" class="icon"></ion-icon>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" id="email" class="inputs input-field" placeholder="E-mail" required />
+                            <ion-icon name="mail-outline" class="icon"></ion-icon>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" oninput="changeIcon(this.value)" id="regPassword"
+                                class="inputs input-field" placeholder="Senha" required />
+                            <ion-icon name="lock-closed-outline" class="icon" id="reg-pass-icon"
+                                onclick="myRegPassword()"></ion-icon>
+                        </div>
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember-me-check" />
+                            <label for="remember-me-check">Manter-me conectado</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Passo 2 do formulário de cadastro-->
+                <div class="step" id="step2">
+                    <label for="code" class="message">
+                        Enviamos um código de verificação para o seu email, por favor,
+                        insira-o aqui.
+                    </label>
+                    <input id="code" class="inputs input-field" type="number" min="000000" max="999999" minlength="6"
+                        maxlength="6" placeholder="Código" />
+                </div>
+                <!--Botões-->
+                <div class="buttons">
+                    <button id="btn-previous" type="button" class="inputs submit-btn" onclick="prevStep()" disabled>
+                        <span>Voltar</span>
+                    </button>
+                    <button id="btn-next" type="button" class="inputs submit-btn" onclick="nextStep()">
+                        <span>Próximo</span>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </button>
+                </div>
+
+                <!-- Essa Div é para futuras atualizações de Integração com Google, Linkedin, Github... -->
+                <!-- <div class="social-login">
+                    <div class="social-login-box">
+                        <ion-icon name="logo-google" class="social-login-icon"></ion-icon>
+                    </div>
+                </div> -->
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Ioni Icons-->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+
+    <!-- Script Js-->
+    <script src="/LoginRegister/src/javascript/script.js"></script>
+</body>
+
+</html>

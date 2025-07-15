@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberBytes - Recupere Seu Acesso</title>
+    <link rel="stylesheet" href="/ForgotPassword/src/styles/style.css">
+    <link rel="icon" type="image/png" href="/Home/img/Logo.png">
+</head>
+
+<body>
+
+    <!--Formulário(Esqueceu a senha)-->
+    <div class="form-container">
+        <div class="form-col">
+            <form action="" class="form-box forgot-password">
+                <div class="form-title">
+                    <span>Problemas com a Senha?</span>
+                </div>
+
+                <div class="step active" id="step1">
+                    <label for="email" class="message">
+                        Informe seu e-mail cadastrado para receber um código de verificação.
+                    </label>
+                    <div class="form-inputs">
+                        <div class="input-box">
+                            <input type="email" id="email" class="inputs input-field" placeholder="E-mail:" required>
+                            <ion-icon name="mail-outline" class="icon"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step" id="step2">
+                    <label for="code" class="message">
+                        Enviamos um código de verificação para o seu e-mail, por favor, insira-o aqui.
+                    </label>
+                    <input id="code" class="inputs input-field" type="number" min="000000" max="999999" minlength="6"
+                        maxlength="6" placeholder="Código" required>
+                </div>
+
+                <div class="step" id="step3">
+                    <label for="forgotPassword" class="message">
+                        Insira uma nova senha segura para sua conta.
+                    </label>
+                    <div class="form-inputs">
+                        <div class="input-box">
+                            <input type="password" oninput="changeIcon(this.value)" id="forgotPassword"
+                                class="inputs input-field" placeholder="Nova Senha" required>
+                            <ion-icon name="lock-closed-outline" class="icon" id="forgot-pass-icon"
+                                onclick="myForgotPassword()"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="buttons">
+                <button id="btn-previous" type="button" class="inputs submit-btn" onclick="prevStep()" disabled>
+                    <span>Voltar</span>
+                </button>
+                <button id="btn-next" type="button" class="inputs submit-btn" onclick="nextStep()">
+                    <span>Próximo</span>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--Scripts-->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+    <script src="/ForgotPassword/src/javascript/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+/* Fonte */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Formatação geral da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background: linear-gradient(to right, white, black);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+/* Formulário geral */
+.form-container {
+    display: flex;
+    width: 450px;
+    height: 600px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    background-color: #ebe7e7;;
+    overflow: hidden;
+}
+
+/* Coluna do formulário */
+.form-col {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Título do formulário */
+.form-title {
+    margin: 40px 0;
+    color: black;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Título do formulário de 'Esqueceu a senha' */
+.forgot-password .form-title {
+    margin-block: 40px 20px;
+}
+
+/* Div responsável pelos inputs (E-mail e Senha) */
+.form-inputs {
+    width: 100%;
+}
+
+/* Div responsável pelos ícones e inputs */
+.input-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    position: relative;
+}
+
+/* Estilo dos campos de input do site */
+.inputs {
+    width: 60%;
+    height: 55px;
+    margin: 10px 0;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo específico para o campo de texto do input */
+.input-field {
+    font-size: 16px;
+    padding: 0 40px 0 20px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    backdrop-filter: blur(20px);
+}
+
+/* Estilo do placeholder (legenda) dos inputs */
+::placeholder {
+    color: black;
+    font-size: 15px;
+}
+
+/* Estilo dos ícones dentro dos campos de input */
+.input-box .icon {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo do botão de submit (Entrar) */
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #6D9886;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* Efeito hover no botão de submit (Entrar) */
+.submit-btn:hover {
+    gap: 15px;
+}
+
+/* Formulário multi-passo */
+/* Botões do formulário multi-passo */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo dos botões do formulário multi-passo */
+.buttons button {
+    width: 100px;
+    padding: 5px 10px;
+    margin: 15px;
+}
+
+/* Estilo dos botões desabilitados no formulário multi-passo */
+.buttons button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Controle da visibilidade dos passos do formulário */
+.step {
+    display: none;
+}
+
+/* Estilo para o passo ativo do formulário */
+.step.active {
+    display: block;
+}
+
+/* Estilo para o campo de código */
+#code {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Estilo específico para o formulário de esquecer senha */
+#forgotPassword{
+    margin: 0 auto;
+}
+
+/* Remove as setinhas do input type number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Estilo da mensagem de feedback */
+.message {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 0 30px;
+    color: #131313;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 80%;
+}
