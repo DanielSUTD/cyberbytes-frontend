@@ -1,31 +1,73 @@
+# 🌐 CyberBytes – Front-End
 
-# CyberBytes - Front-End
-CyberBytes é uma plataforma criada para disseminar o conhecimento em segurança digital. Queremos que qualquer pessoa possa aprender a se proteger contra ameaças online. O frontend do projeto entrega essa missão através de uma interface intuitiva, moderna e responsiva.
+[**Acesse o site (sem backend)**](https://cyberbytes.netlify.app/)
 
-🎨 Telas Disponíveis
+O **CyberBytes** é uma plataforma desenvolvida para **democratizar o conhecimento em segurança digital**, tornando-o acessível e fácil de entender. Em um cenário de ataques virtuais cada vez mais sofisticados, nosso objetivo é **capacitar qualquer pessoa a se proteger online**, oferecendo:
 
-Home: Página principal da plataforma.
+* **Dicas práticas** de segurança.
+* **Informações sobre ameaças recentes**.
+* **Boas práticas para o dia a dia** na internet.
 
-About Us: Informações sobre o projeto e sua equipe.
+O projeto foi desenvolvido como parte da disciplina **Projeto Integrado em Perícia Computacional**, ministrada pelo professor **Weverson Garcia**.
 
-Login: Autenticação dos usuários.
+---
 
-Forgot Password: Recuperação de senha.
+## ✨ Principais Funcionalidades
 
-Register: Cadastro de novos usuários.
+* **Interface moderna e responsiva** para fácil navegação em diferentes dispositivos.
+* **Páginas educativas** com conteúdos sobre segurança digital.
+* **Autenticação de usuários** (login, registro e recuperação de senha – disponível quando integrado ao backend).
 
-Content Page: Acesso aos conteúdos educativos sobre segurança digital.
+---
 
-⚙️ Tecnologias Utilizadas
-HTML, CSS e JavaScript: Base da construção e interatividade do site.
+## 🎨 Telas Disponíveis
 
-Bootstrap: Framework usado para garantir um design responsivo e moderno.
+* **Home**: Página inicial com informações gerais.
+* **About Us**: Detalhes sobre o projeto e a equipe.
+* **Login**: Autenticação de usuários.
+* **Register**: Cadastro de novos usuários.
+* **Forgot Password**: Recuperação de senha.
+* **Content Page**: Conteúdos e dicas de segurança digital.
 
-Ionicons e Ícones do Bootstrap: Personalização visual com ícones modernos e atraentes.
+---
 
-# 🚀 Deploy
-O frontend está hospedado na Netlify.
+## ⚙️ Tecnologias Utilizadas
 
-# 👥 Agradecimentos
-Agradecimento especial à equipe do projeto:
-Khaled Ahmed, Kauan Davi Oliveira De Sá, Samuel C. Braga, Vinicius Bispo, Vinícius Rios, Lucas Henrique Gonçalves Souto.
+* **HTML, CSS e JavaScript**: Estrutura, estilização e interatividade.
+* **Bootstrap**: Framework para um design moderno e responsivo.
+* **Ionicons e Bootstrap Icons**: Ícones para uma experiência visual mais atraente.
+
+---
+
+## 🚀 Deploy
+
+O frontend está hospedado na **Netlify**:
+🔗 [https://cyberbytes.netlify.app/](https://cyberbytes.netlify.app/)
+
+---
+
+## 🤝 Equipe do Projeto
+
+Agradecimentos a todos que colaboraram para o sucesso deste trabalho:
+
+* **Khaled Ahmed**
+* **Kauan Davi Oliveira De Sá**
+* **Samuel C. Braga**
+* **Vinicius Bispo**
+* **Vinícius Rios**
+* **Lucas Henrique Gonçalves Souto**
+
+---
+
+## 💡 Feedback
+
+Contribuições, sugestões ou comentários são sempre bem-vindos para melhorar o projeto.
+
+---
+
+### 🔗 Repositórios Relacionados
+
+* **Front-End**: [CyberBytes Frontend](https://github.com/cyberbytesunc/cyberbytes-frontend)
+* **Back-End**: [CyberBytes Backend](https://github.com/cyberbytesunc/cyberbytes-backend)
+
+---
